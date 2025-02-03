@@ -1,0 +1,62 @@
+{
+  "name": "reading-helper",
+  "version": "1.0.0",
+  "description": "A reading helper app that explains highlighted text with context",
+  "main": "src/main-modular.js",
+  "scripts": {
+    "start": "electron .",
+    "start-safe": "electron src/main-fallback.js",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "rebuild": "electron-rebuild",
+    "postinstall": "electron-rebuild",
+    "install-deps": "npm install",
+    "test": "node test-runner.js",
+    "test:unit": "node src/explanation/tests/text-formatter.test.js",
+    "test:integration": "node src/explanation/tests/integration.test.js"
+  },
+  "keywords": [
+    "electron",
+    "reading",
+    "helper",
+    "ai",
+    "explanation"
+  ],
+  "author": "Reading Helper",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.1",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0",
+    "jsdom": "^25.0.1"
+  },
+  "dependencies": {
+    "@google/genai": "^1.4.0",
+    "@types/node": "^22.15.30",
+    "dotenv": "^16.3.1",
+    "electron-localshortcut": "^3.2.1",
+    "robotjs": "^0.6.0",
+    "tesseract.js": "^5.1.1",
+    "tesseract.js-core": "^6.0.0"
+  },
+  "build": {
+    "appId": "com.readinghelper.app",
+    "productName": "Reading Helper",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}

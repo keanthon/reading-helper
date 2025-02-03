@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Environment variables (contains API keys)
+.env
+
+# Build output
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Electron build artifacts
+*.dmg
+*.AppImage
+*.snap
+*.deb
+*.rpm
+*.exe
+*.msi
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
