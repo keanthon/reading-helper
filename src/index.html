@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Reading Helper</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .status {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .shortcut {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+        
+        .shortcut-main {
+            font-size: 18px;
+        }
+        
+        .shortcut-description {
+            font-size: 11px;
+            opacity: 0.8;
+            margin: 2px 0 8px 0;
+        }
+        
+        .instructions {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="status">Reading Helper Active</div>
+    
+    <div class="shortcut shortcut-main" id="main-shortcut">⌘ + ⇧ + D</div>
+    <div class="shortcut-description">Quick explanation with context</div>
+    
+    <div class="shortcut" id="thorough-shortcut">⌘ + ⇧ + E</div>
+    <div class="shortcut-description">Comprehensive analysis</div>
+    
+    <div class="shortcut" id="code-shortcut">⌘ + ⇧ + C</div>
+    <div class="shortcut-description">Code explanation & analysis</div>
+    
+    <div class="instructions">
+        Select text and press the shortcut<br>
+        for AI-powered explanations
+    </div>
+
+    <script>
+        // Show platform-specific shortcuts
+        if (process.platform !== 'darwin') {
+            document.getElementById('main-shortcut').textContent = 'Ctrl + Shift + D';
+            document.getElementById('thorough-shortcut').textContent = 'Ctrl + Shift + E';
+            document.getElementById('code-shortcut').textContent = 'Ctrl + Shift + C';
+        }
+    </script>
+</body>
+</html>
