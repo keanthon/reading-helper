@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Text Explanation</title>
+    
+    <!-- External Stylesheets - Modular Architecture -->
+    <link rel="stylesheet" href="explanation/styles/explanation-styles-modular.css">
+    
+    <!-- Prevent external script blocking -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:;">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1 class="header-title">Text Explanation</h1>
+    </header>
+    
+    <!-- Status Bar -->
+    <div class="status-bar" id="status-bar">
+        <span class="status-text" id="status-text">🔄 Initializing...</span>
+    </div>
+    
+    <!-- Main Content Area -->
+    <main class="content">
+        <!-- Selected Text Section -->
+        <section class="selected-text" id="selected-text-section" style="display: none;">
+            <h3 class="selected-text-title">📄 Selected Text</h3>
+            <div class="selected-text-content" id="selected-text-content"></div>
+        </section>
+        
+        <!-- Explanation Section -->
+        <section class="explanation-section" id="explanation-section">
+            <h3 class="explanation-title">💡 Explanation</h3>
+            <div class="explanation-content" id="explanation-content">
+                <div class="loading-placeholder" id="loading-placeholder">
+                    <div class="loading-spinner"></div>
+                    <p class="loading-text">Waiting for explanation data...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-screen" id="loading-screen" style="display: none;">
+        <div class="loading-spinner-large"></div>
+        <div class="loading-text-large" id="loading-text-large">Processing your request...</div>
+        <div class="loading-subtext" id="loading-subtext">This may take a few moments</div>
+    </div>
+    
+    <!-- JavaScript Modules -->
+    <script src="explanation/js/dynamic-header-processor.js"></script>
+    <script src="explanation/js/theme-toggle.js"></script>
+    <script src="explanation/js/code-formatter.js"></script>
+    <script src="explanation/js/performance-monitor.js"></script>
+    <script src="explanation/js/event-handler.js"></script>
+    <script src="explanation/js/ui-components.js"></script>
+    <script src="explanation/js/text-formatter.js"></script>
+    <script src="explanation/js/mathjax-loader.js"></script>
+    <script src="explanation/js/explanation-display.js"></script>
+    <script src="explanation/js/controller.js"></script>
+    
+    <script>
+        // Initialize the application when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 Modular explanation window starting...');
+            
+            // Initialize theme toggle first
+            if (!window.themeToggle) {
+                console.log('🎨 Initializing theme toggle...');
+                window.themeToggle = new ThemeToggle();
+            }
+            
+            // Initialize the main controller
+            if (window.ExplanationController) {
+                window.ExplanationController.initialize();
+            } else {
+                console.error('❌ ExplanationController not found');
+            }
+        });
+    </script>
+</body>
+</html>
