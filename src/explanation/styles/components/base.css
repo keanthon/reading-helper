@@ -1,0 +1,285 @@
+/* ===========================================================================
+   BASE STYLES AND RESET
+   Foundation styles, reset, and base typography
+   
+   TEXT COLOR SYSTEM DOCUMENTATION:
+   ================================
+   
+   LIGHT MODE TEXT COLORS:
+   - STATUS TEXT: #1f2937 (dark gray for UI elements)
+   - SELECTED TEXT TITLE: #1e40af (strong blue for emphasis)
+   - SELECTED TEXT CONTENT: #1f2937 (dark gray for readability)
+   - EXPLANATION TITLE: #111827 (very dark for strong hierarchy)
+   - EXPLANATION CONTENT: #111827 (very dark for main text)
+   - PARAGRAPH TEXT: #1f2937 (slightly lighter than headings)
+   - STRONG TEXT: #111827 (dark for emphasis)
+   - ITALIC TEXT: #374151 (medium gray for style distinction)
+   - LIST TEXT: #1f2937 (same as paragraph for consistency)
+   - LINK TEXT: #2563eb (strong blue for visibility)
+   - LINK HOVER: #1d4ed8 (darker blue)
+   - INLINE CODE: #1f2937 (dark for readability)
+   - CODE BLOCK TEXT: #1f2937 (dark for readability)
+   - BLOCKQUOTE TEXT: #374151 (medium dark for distinction)
+   - ALL HEADER TEXT (H1-H6): #111827 (very dark for maximum readability)
+   - LOADING TEXT: #374151 (medium gray for visibility)
+   - LOADING TITLE: #3b82f6 (blue for visibility)
+   - LOADING SUBTEXT: #374151 (dark gray for excellent readability)
+   - ERROR TEXT: #dc2626 (strong red for visibility)
+   - MATH FALLBACK TEXT: #1f2937 (dark for readability)
+   - MATHJAX ERROR TEXT: #dc2626 (strong red for visibility)
+   - WORD COUNT INFO: #374151 (dark gray for excellent contrast)
+   - SMALL TEXT: #374151 (dark slate gray for high readability)
+   - SECONDARY TEXT: #4b5563 (consistent dark gray for readability)
+   
+   DARK MODE TEXT COLORS:
+   - ALL MAIN TEXT: #ffffff (pure white for maximum contrast)
+   - SELECTED TEXT TITLE: #93c5fd (light blue)
+   - SELECTED TEXT CONTENT: #f9fafb (very light gray)
+   - STATUS TEXT: #f3f4f6 (light gray)
+   - LINKS: #60a5fa (bright blue)
+   - LINK HOVER: #93c5fd (lighter blue)
+   - BLOCKQUOTE: #f3f4f6 (light gray)
+   - LOADING TITLE: #60a5fa (bright blue)
+   - LOADING SUBTEXT: #d1d5db (light gray)
+   - ERROR TEXT: #fca5a5 (light red)
+   - MATH FALLBACK: #f3f4f6 (light gray)
+   - WORD COUNT: #ffffff (pure white)
+   - SMALL TEXT: #e5e7eb (light gray for high contrast on dark background)
+   - SECONDARY TEXT: #d1d5db (lighter gray for excellent readability)
+   
+   ALL COLORS PROVIDE EXCELLENT CONTRAST RATIOS FOR ACCESSIBILITY
+   =========================================================================== */
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Main Content Area */
+.content {
+    padding: 24px;
+    height: calc(100vh - 82px - 45px); /* Subtract header and status bar */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 transparent;
+}
+
+.content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Small Text Styles for Better Hierarchy */
+.explanation-content small,
+.explanation-content .small-text,
+.explanation-content .description {
+    font-size: 13px;
+    color: #374151; /* IMPROVED: Much darker gray for better contrast */
+    line-height: 1.5;
+    display: block;
+    margin-top: 4px;
+    font-weight: 500; /* Slightly bolder for better readability */
+}
+
+.explanation-content .secondary-text {
+    font-size: 14px;
+    color: #4b5563; /* IMPROVED: Darker gray for better contrast */
+    line-height: 1.6;
+    font-weight: 500; /* Slightly bolder for better readability */
+}
+
+/* Word Count Info */
+.word-count-info {
+    text-align: right;
+    font-size: 12px;
+    color: #374151; /* IMPROVED: Much darker gray for better contrast */
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: none; /* FIXED: Removed faint gray line in light mode */
+    font-weight: 500; /* Slightly bolder for better readability */
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* ===========================================================================
+   DARK MODE STYLES
+   Dark theme implementation with proper contrast ratios
+   =========================================================================== */
+
+/* Dark Mode Base Styles */
+body.dark-mode {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+}
+
+/* Dark Mode Content Area */
+body.dark-mode .content {
+    color: #ffffff;
+}
+
+body.dark-mode .content::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+body.dark-mode .content::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Dark Mode Text Styles */
+body.dark-mode .explanation-content small,
+body.dark-mode .explanation-content .small-text,
+body.dark-mode .explanation-content .description {
+    color: #e5e7eb; /* Light gray for high contrast on dark background */
+}
+
+body.dark-mode .explanation-content .secondary-text {
+    color: #d1d5db; /* Lighter gray for excellent readability */
+}
+
+/* Dark Mode Word Count Info */
+body.dark-mode .word-count-info {
+    color: #ffffff; /* Pure white */
+    border-top: 1px solid #374151; /* Keep border in dark mode for visual separation */
+}
+
+/* Dark Mode Header Styles */
+body.dark-mode .header {
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom-color: #374151;
+}
+
+body.dark-mode .header h1 {
+    color: #ffffff;
+}
+
+/* Dark Mode Status Bar */
+body.dark-mode .status-bar {
+    background: rgba(15, 23, 42, 0.95);
+    border-top-color: #374151;
+    color: #f3f4f6;
+}
+
+/* Dark Mode Loading States */
+body.dark-mode .loading-container {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+body.dark-mode .loading-title {
+    color: #60a5fa; /* Bright blue */
+}
+
+body.dark-mode .loading-subtext {
+    color: #d1d5db; /* Light gray */
+}
+
+/* Dark Mode Error States */
+body.dark-mode .error-message {
+    color: #fca5a5; /* Light red */
+}
+
+/* Dark Mode Code Blocks */
+body.dark-mode .code-block {
+    background: #1e293b;
+    border-color: #475569;
+}
+
+body.dark-mode .code-block code {
+    color: #e2e8f0;
+}
+
+/* Dark Mode Blockquotes */
+body.dark-mode blockquote {
+    background: rgba(71, 85, 105, 0.2);
+    border-left-color: #60a5fa;
+    color: #f3f4f6;
+}
+
+/* Dark Mode Links */
+body.dark-mode a {
+    color: #60a5fa; /* Bright blue */
+}
+
+body.dark-mode a:hover {
+    color: #93c5fd; /* Lighter blue */
+}
+
+/* Dark Mode Selected Text Area */
+body.dark-mode .selected-text-title {
+    color: #93c5fd; /* Light blue */
+}
+
+body.dark-mode .selected-text-content {
+    color: #f9fafb; /* Very light gray */
+}
+
+/* Dark Mode Math Content */
+body.dark-mode .math-fallback {
+    color: #f3f4f6; /* Light gray */
+}
+
+body.dark-mode .math-error {
+    color: #fca5a5; /* Light red */
+}
+
+/* Dark Mode List Items */
+body.dark-mode ul li,
+body.dark-mode ol li {
+    color: #ffffff;
+}
+
+/* Dark Mode Headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #ffffff;
+}
+
+/* Dark Mode Strong and Emphasis */
+body.dark-mode strong {
+    color: #ffffff;
+}
+
+body.dark-mode em {
+    color: #e5e7eb;
+}
+
+/* Dark Mode Inline Code */
+body.dark-mode code {
+    background: rgba(71, 85, 105, 0.3);
+    color: #e2e8f0;
+}
+
+/* Animations */
