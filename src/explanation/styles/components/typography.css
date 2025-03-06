@@ -1,0 +1,400 @@
+/* ===========================================================================
+   TYPOGRAPHY AND HEADINGS
+   All heading styles (H1-H6) and typography elements
+   =========================================================================== */
+
+/* H1 Headers - Primary - Light Blue */
+.explanation-h1 {
+    font-size: 28px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(99, 102, 241, 0.12) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+    color: #111827; /* H1 HEADER TEXT - Very dark for maximum impact */
+}
+
+.explanation-h1::before {
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+}
+
+/* H2 Headers - Secondary - Light Teal */
+.explanation-h2 {
+    font-size: 24px;
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.12) 0%, rgba(59, 130, 246, 0.12) 100%);
+    border: 1px solid rgba(20, 184, 166, 0.25);
+    box-shadow: 0 3px 10px rgba(20, 184, 166, 0.1);
+    color: #111827; /* H2 HEADER TEXT - Very dark for strong hierarchy */
+}
+
+.explanation-h2::before {
+    background: linear-gradient(135deg, #14b8a6 0%, #3b82f6 100%);
+}
+
+/* H3 Headers - Tertiary - Light Emerald */
+.explanation-h3 {
+    font-size: 20px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(20, 184, 166, 0.12) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+    color: #111827; /* H3 HEADER TEXT - Very dark for clear hierarchy */
+}
+
+.explanation-h3::before {
+    background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+}
+
+/* H4 Headers - Light Amber */
+.explanation-h4 {
+    font-size: 18px;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(16, 185, 129, 0.12) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.1);
+    color: #111827; /* H4 HEADER TEXT - Very dark for readability */
+}
+
+.explanation-h4::before {
+    background: linear-gradient(135deg, #f59e0b 0%, #10b981 100%);
+}
+
+/* H5 Headers - Light Orange */
+.explanation-h5 {
+    font-size: 16px;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.12) 0%, rgba(245, 158, 11, 0.12) 100%);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    box-shadow: 0 1px 4px rgba(249, 115, 22, 0.1);
+    color: #111827; /* H5 HEADER TEXT - Very dark for consistency */
+}
+
+.explanation-h5::before {
+    background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
+}
+
+/* H6 Headers - Light Gray */
+.explanation-h6 {
+    font-size: 14px;
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.12) 0%, rgba(71, 85, 105, 0.12) 100%);
+    border: 1px solid rgba(100, 116, 139, 0.25);
+    box-shadow: 0 1px 3px rgba(100, 116, 139, 0.1);
+    color: #111827; /* H6 HEADER TEXT - Very dark for small text readability */
+}
+
+.explanation-h6::before {
+    background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+}
+
+/* ===========================================================================
+   SHARED EXPLANATION HEADER BASE STYLES
+   Common styles for all explanation headers (H1-H6)
+   =========================================================================== */
+
+/* Base Explanation Header Styles */
+.explanation-h1, .explanation-h2, .explanation-h3, 
+.explanation-h4, .explanation-h5, .explanation-h6,
+.explanation-header {
+    margin: 24px 0 16px 0;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+.explanation-h1::before, .explanation-h2::before, .explanation-h3::before,
+.explanation-h4::before, .explanation-h5::before, .explanation-h6::before,
+.explanation-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    transition: width 0.3s ease;
+}
+
+.explanation-h1:hover::before, .explanation-h2:hover::before, .explanation-h3:hover::before,
+.explanation-h4:hover::before, .explanation-h5:hover::before, .explanation-h6:hover::before,
+.explanation-header:hover::before {
+    width: 8px;
+}
+
+/* Header Icon Styles */
+.header-icon {
+    font-size: 0.9em;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.explanation-header:hover .header-icon,
+.explanation-h1:hover .header-icon, .explanation-h2:hover .header-icon,
+.explanation-h3:hover .header-icon, .explanation-h4:hover .header-icon,
+.explanation-h5:hover .header-icon, .explanation-h6:hover .header-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ===========================================================================
+   DARK MODE TYPOGRAPHY STYLES
+   Dark theme header styles
+   =========================================================================== */
+
+/* Dark Mode Base Header Styles */
+body.dark-mode .explanation-h1, body.dark-mode .explanation-h2, body.dark-mode .explanation-h3,
+body.dark-mode .explanation-h4, body.dark-mode .explanation-h5, body.dark-mode .explanation-h6,
+body.dark-mode .explanation-header {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Dark Mode H1 Headers */
+body.dark-mode .explanation-h1 {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* Dark Mode H2 Headers */
+body.dark-mode .explanation-h2 {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+    border-color: rgba(20, 184, 166, 0.4);
+}
+
+/* Dark Mode H3 Headers */
+body.dark-mode .explanation-h3 {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(20, 184, 166, 0.2) 100%);
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+/* Dark Mode H4 Headers */
+body.dark-mode .explanation-h4 {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(16, 185, 129, 0.2) 100%);
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+/* Dark Mode H5 Headers */
+body.dark-mode .explanation-h5 {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
+    border-color: rgba(249, 115, 22, 0.4);
+}
+
+/* Dark Mode H6 Headers */
+body.dark-mode .explanation-h6 {
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.2) 0%, rgba(71, 85, 105, 0.2) 100%);
+    border-color: rgba(100, 116, 139, 0.4);
+}
+
+/* ===========================================================================
+   DYNAMIC THEME CLASSES
+   Applied by JavaScript for consistent theming
+   =========================================================================== */
+
+/* Mathematical Headers Theme */
+.explanation-h-math:not([data-processed="true"]),
+h1.explanation-h-math:not([data-processed="true"]), 
+h2.explanation-h-math:not([data-processed="true"]), 
+h3.explanation-h-math:not([data-processed="true"]) {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%) !important;
+    border: 2px solid rgba(59, 130, 246, 0.3) !important;
+    color: #1e40af !important;
+}
+
+.explanation-h-math:not([data-processed="true"])::before {
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%) !important;
+    width: 6px !important;
+}
+
+/* Code Examples Theme */
+.explanation-h-code:not([data-processed="true"]),
+h1.explanation-h-code:not([data-processed="true"]), 
+h2.explanation-h-code:not([data-processed="true"]), 
+h3.explanation-h-code:not([data-processed="true"]) {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%) !important;
+    border: 2px solid rgba(20, 184, 166, 0.3) !important;
+    color: #0f766e !important;
+}
+
+.explanation-h-code:not([data-processed="true"])::before {
+    background: linear-gradient(135deg, #14b8a6 0%, #10b981 100%) !important;
+    width: 6px !important;
+}
+
+/* Key Terms Theme */
+.explanation-h-key:not([data-processed="true"]),
+h1.explanation-h-key:not([data-processed="true"]), 
+h2.explanation-h-key:not([data-processed="true"]), 
+h3.explanation-h-key:not([data-processed="true"]) {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(20, 184, 166, 0.15) 100%) !important;
+    border: 2px solid rgba(16, 185, 129, 0.3) !important;
+    color: #047857 !important;
+}
+
+.explanation-h-key:not([data-processed="true"])::before {
+    background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%) !important;
+    width: 6px !important;
+}
+
+/* Analysis Theme */
+.explanation-h-analysis:not([data-processed="true"]),
+h1.explanation-h-analysis:not([data-processed="true"]), 
+h2.explanation-h-analysis:not([data-processed="true"]), 
+h3.explanation-h-analysis:not([data-processed="true"]) {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%) !important;
+    border: 2px solid rgba(245, 158, 11, 0.3) !important;
+    color: #92400e !important;
+}
+
+.explanation-h-analysis:not([data-processed="true"])::before {
+    background: linear-gradient(135deg, #f59e0b 0%, #10b981 100%) !important;
+    width: 6px !important;
+}
+
+/* ===========================================================================
+   DARK MODE DYNAMIC THEMES
+   =========================================================================== */
+
+body.dark-mode .explanation-h-math,
+body.dark-mode h1.explanation-h-math, 
+body.dark-mode h2.explanation-h-math, 
+body.dark-mode h3.explanation-h-math {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(99, 102, 241, 0.25) 100%) !important;
+    border-color: rgba(59, 130, 246, 0.5) !important;
+    color: #93c5fd !important;
+}
+
+body.dark-mode .explanation-h-code,
+body.dark-mode h1.explanation-h-code,
+body.dark-mode h2.explanation-h-code,
+body.dark-mode h3.explanation-h-code {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.25) 0%, rgba(16, 185, 129, 0.25) 100%) !important;
+    border-color: rgba(20, 184, 166, 0.5) !important;
+    color: #5eead4 !important;
+}
+
+body.dark-mode .explanation-h-key,
+body.dark-mode h1.explanation-h-key,
+body.dark-mode h2.explanation-h-key,
+body.dark-mode h3.explanation-h-key {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(20, 184, 166, 0.25) 100%) !important;
+    border-color: rgba(16, 185, 129, 0.5) !important;
+    color: #6ee7b7 !important;
+}
+
+body.dark-mode .explanation-h-analysis,
+body.dark-mode h1.explanation-h-analysis,
+body.dark-mode h2.explanation-h-analysis,
+body.dark-mode h3.explanation-h-analysis {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(16, 185, 129, 0.25) 100%) !important;
+    border-color: rgba(245, 158, 11, 0.5) !important;
+    color: #fbbf24 !important;
+}
+
+/* ===========================================================================
+   SUBHEADER THEMES (H4-H6)
+   Lighter styling for secondary headers
+   =========================================================================== */
+
+/* Mathematical Subheaders Theme */
+.explanation-h-math-sub,
+h4.explanation-h-math-sub, h5.explanation-h-math-sub, h6.explanation-h-math-sub {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%) !important;
+    border: 1px solid rgba(59, 130, 246, 0.2) !important;
+    color: #2563eb !important;
+    font-size: 0.9em !important;
+    padding: 8px 12px !important;
+    margin: 16px 0 12px 0 !important;
+}
+
+.explanation-h-math-sub::before {
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%) !important;
+    width: 3px !important;
+}
+
+/* Code Examples Subheaders Theme */
+.explanation-h-code-sub,
+h4.explanation-h-code-sub, h5.explanation-h-code-sub, h6.explanation-h-code-sub {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%) !important;
+    border: 1px solid rgba(20, 184, 166, 0.2) !important;
+    color: #0d9488 !important;
+    font-size: 0.9em !important;
+    padding: 8px 12px !important;
+    margin: 16px 0 12px 0 !important;
+}
+
+.explanation-h-code-sub::before {
+    background: linear-gradient(135deg, #14b8a6 0%, #10b981 100%) !important;
+    width: 3px !important;
+}
+
+/* Key Terms Subheaders Theme */
+.explanation-h-key-sub,
+h4.explanation-h-key-sub, h5.explanation-h-key-sub, h6.explanation-h-key-sub {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(20, 184, 166, 0.08) 100%) !important;
+    border: 1px solid rgba(16, 185, 129, 0.2) !important;
+    color: #059669 !important;
+    font-size: 0.9em !important;
+    padding: 8px 12px !important;
+    margin: 16px 0 12px 0 !important;
+}
+
+.explanation-h-key-sub::before {
+    background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%) !important;
+    width: 3px !important;
+}
+
+/* Analysis Subheaders Theme */
+.explanation-h-analysis-sub,
+h4.explanation-h-analysis-sub, h5.explanation-h-analysis-sub, h6.explanation-h-analysis-sub {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%) !important;
+    border: 1px solid rgba(245, 158, 11, 0.2) !important;
+    color: #b45309 !important;
+    font-size: 0.9em !important;
+    padding: 8px 12px !important;
+    margin: 16px 0 12px 0 !important;
+}
+
+.explanation-h-analysis-sub::before {
+    background: linear-gradient(135deg, #f59e0b 0%, #10b981 100%) !important;
+    width: 3px !important;
+}
+
+/* ===========================================================================
+   DARK MODE SUBHEADER THEMES
+   =========================================================================== */
+
+body.dark-mode .explanation-h-math-sub,
+body.dark-mode h4.explanation-h-math-sub, 
+body.dark-mode h5.explanation-h-math-sub, 
+body.dark-mode h6.explanation-h-math-sub {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%) !important;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+    color: #a5b4fc !important;
+}
+
+body.dark-mode .explanation-h-code-sub,
+body.dark-mode h4.explanation-h-code-sub,
+body.dark-mode h5.explanation-h-code-sub,
+body.dark-mode h6.explanation-h-code-sub {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%) !important;
+    border-color: rgba(20, 184, 166, 0.3) !important;
+    color: #7dd3fc !important;
+}
+
+body.dark-mode .explanation-h-key-sub,
+body.dark-mode h4.explanation-h-key-sub,
+body.dark-mode h5.explanation-h-key-sub,
+body.dark-mode h6.explanation-h-key-sub {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(20, 184, 166, 0.15) 100%) !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
+    color: #86efac !important;
+}
+
+body.dark-mode .explanation-h-analysis-sub,
+body.dark-mode h4.explanation-h-analysis-sub,
+body.dark-mode h5.explanation-h-analysis-sub,
+body.dark-mode h6.explanation-h-analysis-sub {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%) !important;
+    border-color: rgba(245, 158, 11, 0.3) !important;
+    color: #fbbf24 !important;
+}
