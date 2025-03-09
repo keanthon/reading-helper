@@ -1,0 +1,209 @@
+/* ===========================================================================
+   HEADER COMPONENTS
+   Header styles, status bar, and navigation elements
+   =========================================================================== */
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    color: white;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none; /* FIXED: Completely removed shadow to eliminate any line appearance */
+    z-index: 100;
+    position: relative;
+}
+
+.header-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Status Bar */
+.status-bar {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 24px;
+    border-bottom: none; /* FIXED: Removed faint gray line in light mode */
+    backdrop-filter: blur(10px);
+}
+
+/* Status Text - Light mode readable */
+.status-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1f2937; /* STATUS TEXT - Dark gray for good contrast */
+}
+
+/* Themed Headers */
+.header-thorough .header-title {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+}
+
+.header-code .header-title {
+    background: linear-gradient(45deg, #00d4aa, #00a693);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 212, 170, 0.3);
+}
+
+/* ===========================================================================
+   DARK MODE HEADER STYLES
+   Dark theme header and status bar styles
+   =========================================================================== */
+
+/* Dark Mode Header */
+body.dark-mode .header {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .header-title {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode Status Bar */
+body.dark-mode .status-bar {
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid #374151; /* Keep border in dark mode for visual separation */
+    backdrop-filter: blur(10px);
+}
+
+body.dark-mode .status-text {
+    color: #f3f4f6; /* Light gray for dark mode */
+}
+
+/* Dark Mode Themed Headers */
+body.dark-mode .header-thorough .header-title {
+    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(251, 191, 36, 0.3);
+}
+
+/* Enhanced Explanation Headers */
+.explanation-header {
+    margin: 24px 0 16px 0;
+    color: #0f172a;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.explanation-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    transition: width 0.3s ease;
+}
+
+.explanation-header:hover::before {
+    width: 8px;
+}
+
+.header-icon {
+    font-size: 0.9em;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.explanation-header:hover .header-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ===========================================================================
+   BIG SECTION HEADERS
+   Special styling for major section headers that follow ---\n### pattern
+   =========================================================================== */
+
+.big-section-header {
+    margin: 32px 0 24px 0;
+    padding: 24px 32px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+    position: relative;
+    overflow: hidden;
+    transform: perspective(1000px) rotateX(0deg);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.big-section-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.big-section-header:hover::before {
+    left: 100%;
+}
+
+.big-section-header:hover {
+    transform: perspective(1000px) rotateX(-2deg) translateY(-4px);
+    box-shadow: 0 12px 48px rgba(59, 130, 246, 0.4);
+}
+
+.big-section-header .header-icon {
+    font-size: 1.4em;
+    margin-right: 16px;
+    opacity: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Big Section Headers */
+body.dark-mode .big-section-header {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    box-shadow: 0 8px 32px rgba(30, 64, 175, 0.4);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+body.dark-mode .big-section-header:hover {
+    box-shadow: 0 12px 48px rgba(30, 64, 175, 0.5);
+}
+
+/* Big Section Header Animation */
+@keyframes bigSectionSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.big-section-header {
+    animation: bigSectionSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
