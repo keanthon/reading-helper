@@ -1,0 +1,254 @@
+/* ===========================================================================
+   CONTENT SECTIONS
+   Selected text section and explanation section layouts
+   =========================================================================== */
+
+/* Selected Text Section */
+.selected-text {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: none; /* FIXED: Removed faint border lines in light mode */
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: none; /* FIXED: Completely removed shadow to eliminate any faint line artifacts */
+    position: relative;
+    overflow: hidden;
+}
+
+.selected-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2196f3, #21cbf3);
+}
+
+/* Selected Text Title - Blue for emphasis */
+.selected-text-title {
+    margin: 0 0 12px 0;
+    color: #1e40af; /* SELECTED TEXT TITLE - Strong blue for emphasis */
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+/* Selected Text Content - Main readable text */
+.selected-text-content {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #1f2937; /* SELECTED TEXT CONTENT - Dark gray for readability */
+    font-weight: 500;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Explanation Section */
+.explanation-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: none; /* FIXED: Completely removed shadow to eliminate any faint line artifacts */
+    border: none; /* FIXED: Removed faint border lines in light mode */
+    position: relative;
+    overflow: hidden;
+}
+
+.explanation-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Explanation Title - Primary heading */
+.explanation-title {
+    margin: 0 0 20px 0;
+    color: #111827; /* EXPLANATION TITLE - Very dark for strong hierarchy */
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+/* Main explanation content text */
+.explanation-content {
+    line-height: 1.8;
+    color: #111827; /* EXPLANATION CONTENT - Very dark for main text */
+    font-size: 15px;
+}
+
+/* Explanation paragraphs */
+.explanation-content p {
+    color: #1f2937; /* PARAGRAPH TEXT - Slightly lighter than headings */
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+/* Strong text emphasis */
+.explanation-content strong {
+    color: #111827; /* STRONG TEXT - Dark for emphasis */
+    font-weight: 600;
+}
+
+/* Italic text */
+.explanation-content em {
+    color: #374151; /* ITALIC TEXT - Medium gray for style distinction */
+    font-style: italic;
+}
+
+/* Lists */
+.explanation-content ul, .explanation-content ol {
+    color: #1f2937; /* LIST TEXT - Same as paragraph for consistency */
+    margin-left: 20px;
+    margin-bottom: 16px;
+}
+
+.explanation-content li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Links */
+.explanation-content a {
+    color: #2563eb; /* LINK TEXT - Strong blue for visibility */
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.explanation-content a:hover {
+    color: #1d4ed8; /* LINK HOVER - Darker blue */
+    border-bottom-color: #2563eb;
+}
+
+.explanation-content hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #f1f5f9 50%, transparent 100%); /* FIXED: Lighter color to reduce visibility */
+    margin: 24px 0;
+}
+
+/* ===========================================================================
+   DARK MODE CONTENT STYLES
+   Dark theme content section styles
+   =========================================================================== */
+
+/* Dark Mode Selected Text Section */
+body.dark-mode .selected-text {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: 2px solid #475569;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .selected-text::before {
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+}
+
+body.dark-mode .selected-text-title {
+    color: #93c5fd; /* Light blue for dark mode */
+}
+
+body.dark-mode .selected-text-content {
+    color: #f9fafb; /* Very light gray for dark mode */
+}
+
+/* Dark Mode Explanation Section */
+body.dark-mode .explanation-section {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: 1px solid #475569;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .explanation-section::before {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+body.dark-mode .explanation-title {
+    color: #ffffff; /* Pure white for strong hierarchy */
+}
+
+body.dark-mode .explanation-content {
+    color: #ffffff; /* Pure white for main text */
+}
+
+body.dark-mode .explanation-content p {
+    color: #f3f4f6; /* Light gray for paragraphs */
+}
+
+body.dark-mode .explanation-content strong {
+    color: #ffffff; /* Pure white for emphasis */
+}
+
+body.dark-mode .explanation-content em {
+    color: #e5e7eb; /* Light gray for italic text */
+}
+
+/* ===========================================================================
+   STREAMING CONTENT STYLES
+   Styles for dynamically generated content from text formatter
+   =========================================================================== */
+
+/* Content paragraphs generated by text formatter */
+.content-paragraph {
+    color: #1f2937; /* CONTENT PARAGRAPH - Dark gray for readability */
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+/* Bullet points generated by text formatter */
+.bullet-point {
+    color: #1f2937; /* BULLET POINT - Same as paragraphs */
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    margin-left: 8px;
+    position: relative;
+    padding-left: 0px;
+}
+
+/* Numbered list items generated by text formatter */
+.numbered-item {
+    color: #1f2937; /* NUMBERED ITEM - Same as paragraphs */
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    margin-left: 8px;
+}
+
+/* Inline code generated by text formatter */
+.inline-code {
+    background: #f1f5f9;
+    color: #1e40af;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Monaco', monospace;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Dark mode styles for streaming content */
+body.dark-mode .content-paragraph {
+    color: #f3f4f6; /* Light gray for paragraphs in dark mode */
+}
+
+body.dark-mode .bullet-point {
+    color: #f3f4f6; /* Light gray for bullet points in dark mode */
+}
+
+body.dark-mode .numbered-item {
+    color: #f3f4f6; /* Light gray for numbered items in dark mode */
+}
+
+body.dark-mode .inline-code {
+    background: #374151;
+    color: #60a5fa;
+}
