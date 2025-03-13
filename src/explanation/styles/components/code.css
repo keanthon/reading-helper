@@ -1,0 +1,250 @@
+/* ===========================================================================
+   CODE ELEMENTS - TERMINAL STYLE
+   Simple terminal-like code blocks with neon green text and proper wrapping
+   =========================================================================== */
+
+/* Base font stack for all code elements */
+:root {
+    --code-font: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', 'JetBrains Mono', Consolas, 'Courier New', monospace;
+    --terminal-bg: #000000;
+    --terminal-green: #00ff00;
+    --terminal-green-dark: #00cc00;
+    --terminal-border: #00ff00;
+    --terminal-shadow: rgba(0, 255, 0, 0.3);
+}
+
+/* ===========================================================================
+   INLINE CODE
+   =========================================================================== */
+
+.explanation-content code {
+    background: var(--terminal-bg) !important;
+    color: var(--terminal-green) !important;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--code-font);
+    font-size: 85%;
+    font-weight: 400;
+    border: 1px solid var(--terminal-border) !important;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Don't style inline code when it's inside a code block */
+.code-block code,
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border: none;
+    font-weight: normal;
+    font-size: inherit;
+}
+
+/* ===========================================================================
+   CODE BLOCKS - TERMINAL STYLE
+   =========================================================================== */
+
+.code-block {
+    background: var(--terminal-bg) !important;
+    border: 2px solid var(--terminal-border) !important;
+    border-radius: 6px;
+    margin: 16px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 0 10px var(--terminal-shadow),
+        inset 0 0 20px rgba(0, 255, 0, 0.1);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.code-block code {
+    display: block;
+    padding: 20px;
+    font-family: var(--code-font);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--terminal-green) !important;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    text-shadow: 0 0 3px var(--terminal-shadow);
+    
+    /* FORCE text to wrap - no exceptions */
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-all !important;
+    
+    /* Absolutely no horizontal overflow */
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    
+    /* Better text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Container constraints */
+    box-sizing: border-box !important;
+}
+
+/* Alternative: Use pre tags for code blocks */
+.explanation-content pre {
+    background: var(--terminal-bg) !important;
+    border: 2px solid var(--terminal-border) !important;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 16px 0;
+    font-family: var(--code-font);
+    max-width: 100%;
+    box-sizing: border-box;
+    box-shadow: 
+        0 0 10px var(--terminal-shadow),
+        inset 0 0 20px rgba(0, 255, 0, 0.1);
+    
+    /* Ensure no horizontal overflow */
+    overflow-x: hidden;
+}
+
+.explanation-content pre code {
+    background: none;
+    padding: 0;
+    border: none;
+    color: var(--terminal-green) !important;
+    font-family: var(--code-font);
+    font-size: 14px;
+    line-height: 1.5;
+    display: block;
+    max-width: 100%;
+    text-shadow: 0 0 3px var(--terminal-shadow);
+    
+    /* FORCE text to wrap - no exceptions */
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-all !important;
+    
+    /* Container constraints */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    
+    /* Better text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===========================================================================
+   BLOCKQUOTES
+   =========================================================================== */
+
+.explanation-content blockquote {
+    border-left: 4px solid #3b82f6;
+    background: rgba(59, 130, 246, 0.05);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+    color: #374151;
+    font-style: italic;
+}
+
+/* ===========================================================================
+   DARK MODE OVERRIDES
+   =========================================================================== */
+
+body.dark-mode .explanation-content code {
+    background: var(--terminal-bg) !important;
+    color: var(--terminal-green) !important;
+    border: 1px solid var(--terminal-border) !important;
+}
+
+body.dark-mode .code-block {
+    background: var(--terminal-bg) !important;
+    border: 2px solid var(--terminal-border) !important;
+    box-shadow: 0 4px 8px rgba(0, 255, 65, 0.2);
+}
+
+body.dark-mode .code-block code {
+    color: var(--terminal-green) !important;
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+}
+
+body.dark-mode .explanation-content pre {
+    background: var(--terminal-bg) !important;
+    border: 2px solid var(--terminal-border) !important;
+    box-shadow: 0 4px 8px rgba(0, 255, 65, 0.2);
+}
+
+body.dark-mode .explanation-content pre code {
+    color: var(--terminal-green) !important;
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+}
+
+body.dark-mode .explanation-content blockquote {
+    border-left: 4px solid #58a6ff;
+    background: rgba(88, 166, 255, 0.1);
+    color: #c9d1d9;
+}
+
+/* ===========================================================================
+   DARK MODE CODE STYLES
+   Dark theme code blocks and inline code
+   =========================================================================== */
+
+/* Dark Mode Code Variables */
+body.dark-mode {
+    --terminal-bg-dark: #0a0a0a;
+    --terminal-green-bright: #00ff41;
+    --terminal-border-dark: #00ff41;
+    --terminal-shadow-dark: rgba(0, 255, 65, 0.4);
+}
+
+/* Dark Mode Inline Code - Enhanced visibility */
+body.dark-mode .explanation-content code {
+    background: var(--terminal-bg-dark) !important;
+    color: var(--terminal-green-bright) !important;
+    border: 1px solid var(--terminal-border-dark) !important;
+    box-shadow: 0 0 8px var(--terminal-shadow-dark);
+}
+
+/* Dark Mode Code Blocks - Enhanced terminal effect */
+body.dark-mode .code-block {
+    background: var(--terminal-bg-dark) !important;
+    border: 2px solid var(--terminal-border-dark) !important;
+    box-shadow: 
+        0 0 20px var(--terminal-shadow-dark),
+        inset 0 0 20px rgba(0, 255, 65, 0.1) !important;
+}
+
+body.dark-mode .code-block code {
+    color: var(--terminal-green-bright) !important;
+    text-shadow: 0 0 5px var(--terminal-shadow-dark);
+}
+
+/* Dark Mode Pre Elements */
+body.dark-mode pre {
+    background: var(--terminal-bg-dark) !important;
+    border: 1px solid var(--terminal-border-dark) !important;
+    box-shadow: 0 0 15px var(--terminal-shadow-dark);
+}
+
+body.dark-mode pre code {
+    color: var(--terminal-green-bright) !important;
+}
+
+/* Light Mode Code Enhancements */
+body.light-mode .explanation-content code {
+    background: var(--terminal-bg) !important;
+    color: var(--terminal-green) !important;
+    border: 1px solid var(--terminal-border) !important;
+}
+
+body.light-mode .code-block {
+    background: var(--terminal-bg) !important;
+    border: 2px solid var(--terminal-border) !important;
+}
+
+body.light-mode .code-block code {
+    color: var(--terminal-green) !important;
+}
