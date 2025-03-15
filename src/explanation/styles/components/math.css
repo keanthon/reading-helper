@@ -1,0 +1,234 @@
+/* ===========================================================================
+   MATH ELEMENTS
+   MathJax styling, math windows, equations, and mathematical content
+   =========================================================================== */
+
+/* MathJax Equation Styles */
+.MathJax {
+    outline: none;
+}
+
+.MathJax_Display {
+    text-align: center !important;
+    margin: 1em 0 !important;
+}
+
+/* MATH EQUATION WINDOWS - Prominent individual windows for each equation */
+mjx-container[display="true"] {
+    display: block !important;
+    text-align: center !important;
+    margin: 32px auto !important;
+    padding: 40px 32px !important;
+    max-width: 90% !important;
+    min-height: 120px !important;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fffe 50%, #f0fdfa 100%) !important;
+    border: 2px solid rgba(16, 185, 129, 0.4) !important;
+    border-radius: 16px !important;
+    box-shadow: 
+        0 8px 32px rgba(16, 185, 129, 0.15),
+        0 4px 16px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+    position: relative !important;
+    transform: translateY(0) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    isolation: isolate !important;
+    font-size: 1.2em !important;
+}
+
+/* Hover effect for math windows */
+mjx-container[display="true"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 
+        0 12px 48px rgba(16, 185, 129, 0.2),
+        0 6px 24px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+    border-color: rgba(16, 185, 129, 0.6) !important;
+}
+
+/* MATH WINDOW - Enhanced window styling */
+.math-window,
+mjx-container[display="true"] {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fffe 50%, #f0fdfa 100%) !important;
+    border: 2px solid rgba(16, 185, 129, 0.4) !important;
+    box-shadow: 
+        0 8px 32px rgba(16, 185, 129, 0.15),
+        0 4px 16px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+    border-radius: 16px !important;
+    padding: 40px 32px !important;
+    margin: 32px auto !important;
+    position: relative !important;
+    overflow: visible !important;
+    color: #111827 !important;
+    font-size: 1.2em !important;
+    min-height: 120px !important;
+    max-width: 90% !important;
+}
+
+/* Remove the math window header label */
+.math-window::before,
+mjx-container[display="true"]::before {
+    display: none !important;
+}
+
+/* Enhanced inline math styling */
+mjx-container[display="false"] {
+    display: inline !important;
+    margin: 0 0.4em !important;
+    padding: 0.3em 0.6em !important;
+    background: linear-gradient(135deg, rgba(240, 243, 246, 0.9) 0%, rgba(226, 232, 240, 0.7) 100%) !important;
+    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+    border-radius: 6px !important;
+    font-size: 1.05em !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.2s ease !important;
+}
+
+mjx-container[display="false"]:hover {
+    background: linear-gradient(135deg, rgba(226, 232, 240, 0.9) 0%, rgba(203, 213, 225, 0.8) 100%) !important;
+    border-color: rgba(148, 163, 184, 0.5) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+.math-equation {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 12px 0;
+    text-align: center;
+}
+
+/* Math Fallback Styles */
+.math-fallback {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f2ff 100%);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+    font-size: 0.95em;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    color: #1f2937; /* MATH FALLBACK TEXT - Dark for readability */
+    transition: all 0.2s ease;
+}
+
+.math-fallback:hover {
+    background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
+    border-color: rgba(102, 126, 234, 0.4);
+}
+
+.math-fallback.inline-math {
+    display: inline;
+    margin: 0 2px;
+}
+
+.math-fallback.display-math {
+    display: block;
+    text-align: center;
+    margin: 16px 0;
+    padding: 12px;
+    font-size: 1.1em;
+    background: linear-gradient(135deg, #f8fbff 0%, #e8f4ff 100%);
+    border-radius: 8px;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+/* MathJax processing indicator */
+.MathJax_Processing {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%) !important;
+    border: 1px solid #ffd93d !important;
+    border-radius: 4px !important;
+    padding: 2px 6px !important;
+}
+
+/* MathJax error styles */
+.MathJax_Error {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%) !important;
+    border: 1px solid #f19ca4 !important;
+    border-radius: 4px !important;
+    color: #dc2626 !important; /* MATHJAX ERROR TEXT - Strong red for visibility */
+    padding: 2px 6px !important;
+}
+
+/* ===========================================================================
+   DARK MODE OVERRIDES FOR MATH
+   Professional dark theme for math elements
+   =========================================================================== */
+
+/* Dark mode math windows - Enhanced window styling */
+body.dark-mode .math-window,
+body.dark-mode mjx-container[display="true"] {
+    background: linear-gradient(145deg, #1f2937 0%, #1a2332 50%, #111927 100%) !important;
+    border: 2px solid rgba(16, 185, 129, 0.5) !important;
+    color: #ffffff !important;
+    box-shadow: 
+        0 8px 32px rgba(16, 185, 129, 0.25),
+        0 4px 16px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark mode hover effect */
+body.dark-mode mjx-container[display="true"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 
+        0 12px 48px rgba(16, 185, 129, 0.35),
+        0 6px 24px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(16, 185, 129, 0.7) !important;
+}
+
+/* Dark mode math window header - removed */
+body.dark-mode .math-window::before,
+body.dark-mode mjx-container[display="true"]::before {
+    display: none !important;
+}
+
+/* Dark mode inline math */
+body.dark-mode mjx-container[display="false"] {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(20, 184, 166, 0.12) 100%) !important;
+    border: 1px solid rgba(16, 185, 129, 0.4) !important;
+    color: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(16, 185, 129, 0.2) !important;
+}
+
+body.dark-mode mjx-container[display="false"]:hover {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(20, 184, 166, 0.18) 100%) !important;
+    border-color: rgba(16, 185, 129, 0.6) !important;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Dark mode math fallback */
+body.dark-mode .math-fallback {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(139, 92, 246, 0.12) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #e5e7eb; /* Light gray for readability */
+}
+
+body.dark-mode .math-fallback:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(139, 92, 246, 0.18) 100%);
+    border-color: rgba(99, 102, 241, 0.5);
+}
+
+body.dark-mode .math-fallback.display-math {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+/* Dark mode MathJax processing and error states */
+body.dark-mode .MathJax_Processing {
+    background: linear-gradient(135deg, #92400e 0%, #b45309 100%) !important;
+    border: 1px solid #d97706 !important;
+    color: #fbbf24 !important;
+}
+
+body.dark-mode .MathJax_Error {
+    background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%) !important;
+    border: 1px solid #dc2626 !important;
+    color: #fca5a5 !important;
+}
+
+/* Dark mode equation styling */
+body.dark-mode .math-equation {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    border: 1px solid #374151;
+    color: #e5e7eb;
+}
