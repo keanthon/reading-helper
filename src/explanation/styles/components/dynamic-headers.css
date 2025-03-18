@@ -1,0 +1,110 @@
+/* ===========================================================================
+   DYNAMIC HEADER THEMING
+   Content-based header styling that works regardless of LLM output variation
+   =========================================================================== */
+
+/* 
+   APPROACH: Use multiple CSS selector strategies to ensure headers are themed
+   consistently regardless of how the LLM generates the HTML structure
+*/
+
+/* ===========================================================================
+   TEXT-BASED HEADER SELECTORS
+   Match headers based on their text content using attribute selectors
+   =========================================================================== */
+
+/* Mathematical Equations Headers - Blue Theme */
+h1[class*="explanation"]:is([title*="Mathematical"], [data-content*="Mathematical"]),
+h2[class*="explanation"]:is([title*="Mathematical"], [data-content*="Mathematical"]),
+h3[class*="explanation"]:is([title*="Mathematical"], [data-content*="Mathematical"]),
+h1:has-text("Mathematical Equations"),
+h2:has-text("Mathematical Equations"), 
+h3:has-text("Mathematical Equations"),
+*[class*="explanation"]:has-text("Mathematical"),
+*[class*="header"]:has-text("Mathematical") {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%) !important;
+    border: 2px solid rgba(59, 130, 246, 0.3) !important;
+    color: #1e40af !important;
+    font-weight: 700 !important;
+}
+
+/* Code Examples Headers - Teal Theme */
+h1[class*="explanation"]:is([title*="Code"], [data-content*="Code"]),
+h2[class*="explanation"]:is([title*="Code"], [data-content*="Code"]),
+h3[class*="explanation"]:is([title*="Code"], [data-content*="Code"]),
+h1:has-text("Code Examples"),
+h2:has-text("Code Examples"),
+h3:has-text("Code Examples"),
+*[class*="explanation"]:has-text("Code"),
+*[class*="header"]:has-text("Code") {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%) !important;
+    border: 2px solid rgba(20, 184, 166, 0.3) !important;
+    color: #0f766e !important;
+    font-weight: 700 !important;
+}
+
+/* Key Terms Headers - Emerald Theme */
+h1[class*="explanation"]:is([title*="Key"], [data-content*="Key"]),
+h2[class*="explanation"]:is([title*="Key"], [data-content*="Key"]),
+h3[class*="explanation"]:is([title*="Key"], [data-content*="Key"]),
+h1:has-text("Key Terms"),
+h2:has-text("Key Terms"),
+h3:has-text("Key Terms"),
+*[class*="explanation"]:has-text("Key"),
+*[class*="header"]:has-text("Key") {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(20, 184, 166, 0.15) 100%) !important;
+    border: 2px solid rgba(16, 185, 129, 0.3) !important;
+    color: #047857 !important;
+    font-weight: 700 !important;
+}
+
+/* Analysis/Summary Headers - Amber Theme */
+h1[class*="explanation"]:is([title*="Analysis"], [data-content*="Analysis"]),
+h2[class*="explanation"]:is([title*="Analysis"], [data-content*="Analysis"]),
+h3[class*="explanation"]:is([title*="Analysis"], [data-content*="Analysis"]),
+h1:has-text("Analysis"),
+h2:has-text("Analysis"),
+h3:has-text("Analysis"),
+*[class*="explanation"]:has-text("Analysis"),
+*[class*="header"]:has-text("Analysis") {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%) !important;
+    border: 2px solid rgba(245, 158, 11, 0.3) !important;
+    color: #92400e !important;
+    font-weight: 700 !important;
+}
+
+/* ===========================================================================
+   FALLBACK HEADER STYLING
+   Ensure all headers get basic theming even without specific classes
+   =========================================================================== */
+
+/* Generic explanation headers fallback */
+.explanation-content h1:not([class*="explanation-h"]),
+.explanation-content h2:not([class*="explanation-h"]),
+.explanation-content h3:not([class*="explanation-h"]),
+.explanation-section h1:not([class*="explanation-h"]),
+.explanation-section h2:not([class*="explanation-h"]),
+.explanation-section h3:not([class*="explanation-h"]) {
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.12) 0%, rgba(71, 85, 105, 0.12) 100%);
+    border: 1px solid rgba(100, 116, 139, 0.25);
+    color: #111827;
+    font-weight: 700;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin: 24px 0 16px 0;
+    position: relative;
+}
+
+/* ===========================================================================
+   DARK MODE OVERRIDES
+   =========================================================================== */
+
+body.dark-mode h1[class*="explanation"],
+body.dark-mode h2[class*="explanation"],
+body.dark-mode h3[class*="explanation"],
+body.dark-mode *[class*="explanation"]:has-text("Mathematical"),
+body.dark-mode *[class*="explanation"]:has-text("Code"),
+body.dark-mode *[class*="explanation"]:has-text("Key"),
+body.dark-mode *[class*="explanation"]:has-text("Analysis") {
+    color: #ffffff !important;
+}

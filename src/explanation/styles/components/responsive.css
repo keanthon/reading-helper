@@ -1,0 +1,638 @@
+/* ===========================================================================
+   DARK MODE AND RESPONSIVE DESIGN
+   Dark mode overrides, responsive breakpoints, and accessibility features
+   =========================================================================== */
+
+/* Dark mode header and content adjustments */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        color: #ffffff;
+    }
+    
+    .explanation-header {
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+    
+    .explanation-title {
+        color: #ffffff; /* DARK MODE: Explanation title - Pure white */
+    }
+    
+    /* Status and UI text in dark mode */
+    .status-text {
+        color: #f3f4f6; /* DARK MODE: Status text - Light gray */
+    }
+    
+    /* Selected text section */
+    .selected-text-title {
+        color: #93c5fd; /* DARK MODE: Selected text title - Light blue */
+    }
+    
+    .selected-text-content {
+        color: #f9fafb; /* DARK MODE: Selected text content - Very light gray */
+    }
+    
+    .explanation-content {
+        color: #ffffff;
+    }
+    
+    .explanation-content p {
+        color: #f9fafb !important; /* CRITICAL FIX: Near-white for maximum contrast */
+        font-weight: 500 !important; /* CRITICAL FIX: Slightly bolder for visibility */
+    }
+    
+    .explanation-content strong {
+        color: #ffffff;
+    }
+    
+    .explanation-content em {
+        color: #fbbf24 !important; /* CRITICAL FIX: Bright yellow for italic text */
+        font-weight: 600 !important; /* CRITICAL FIX: Bold italic for maximum visibility */
+        font-style: italic !important;
+    }
+    
+    .explanation-content i {
+        color: #fbbf24 !important; /* CRITICAL FIX: Bright yellow for italic text */
+        font-weight: 600 !important; /* CRITICAL FIX: Bold italic for maximum visibility */
+        font-style: italic !important;
+    }
+    
+    .explanation-content ul, .explanation-content ol {
+        color: #ffffff; /* DARK MODE: List text - Pure white */
+    }
+    
+    /* CRITICAL FIX: Bullet point text must be highly visible */
+    .explanation-content ul li,
+    .explanation-content ol li {
+        color: #f9fafb !important; /* Force near-white for bullet points */
+        font-weight: 500 !important;
+    }
+    
+    .explanation-content span,
+    .explanation-content div {
+        color: #f9fafb !important; /* Force near-white for maximum readability */
+        font-weight: 500 !important; /* Slightly bolder for better visibility */
+    }
+    
+    /* Interactive elements */
+    .explanation-content a {
+        color: #60a5fa; /* DARK MODE: Links - Bright blue */
+    }
+    
+    .explanation-content a:hover {
+        color: #93c5fd; /* DARK MODE: Link hover - Lighter blue */
+    }
+    
+    /* Code and special text */
+    .explanation-content code {
+        color: #fde047 !important; /* CRITICAL FIX: Bright yellow for code */
+        background: rgba(0, 0, 0, 0.3) !important; /* Dark background for code */
+        padding: 2px 4px !important;
+        border-radius: 3px !important;
+        font-weight: 600 !important;
+    }
+    
+    .explanation-content pre {
+        background: rgba(26, 32, 44, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #ffffff; /* DARK MODE: Code blocks - Pure white */
+    }
+    
+    .explanation-content pre code {
+        color: #ffffff; /* DARK MODE: Code in blocks - Pure white */
+    }
+    
+    .explanation-content blockquote {
+        background: rgba(59, 130, 246, 0.1);
+        border-left-color: #63b3ed;
+        color: #f3f4f6; /* DARK MODE: Blockquote - Light gray */
+    }
+    
+    .explanation-h1 {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
+        border-color: rgba(59, 130, 246, 0.3);
+        color: #ffffff;
+    }
+    
+    .explanation-h2 {
+        background: linear-gradient(135deg, rgba(20, 184, 166, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+        border-color: rgba(20, 184, 166, 0.3);
+        color: #ffffff;
+    }
+    
+    .explanation-h3 {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(20, 184, 166, 0.2) 100%);
+        border-color: rgba(16, 185, 129, 0.3);
+        color: #ffffff;
+    }
+    
+    .explanation-h4 {
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(16, 185, 129, 0.2) 100%);
+        border-color: rgba(245, 158, 11, 0.3);
+        color: #ffffff;
+    }
+    
+    .explanation-h5 {
+        background: linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%);
+        border-color: rgba(249, 115, 22, 0.3);
+        color: #ffffff;
+    }
+    
+    .explanation-h6 {
+        background: linear-gradient(135deg, rgba(100, 116, 139, 0.2) 0%, rgba(71, 85, 105, 0.2) 100%);
+        border-color: rgba(100, 116, 139, 0.3);
+        color: #ffffff;
+    }
+    
+    .selected-text,
+    .explanation-section {
+        background: rgba(17, 24, 39, 0.95);
+        border-color: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+    }
+    
+    /* Loading states */
+    .loading-placeholder {
+        color: #ffffff; /* DARK MODE: Loading text - Pure white */
+        font-weight: 500;
+    }
+    
+    .loading-text-large {
+        color: #60a5fa; /* DARK MODE: Loading title - Bright blue */
+    }
+    
+    .loading-subtext {
+        color: #f9fafb !important; /* CRITICAL FIX: Near-white for maximum contrast */
+        font-weight: 600 !important; /* CRITICAL FIX: Much bolder for visibility */
+    }
+    
+    /* Error states */
+    .error {
+        color: #fca5a5; /* DARK MODE: Error text - Light red */
+    }
+    
+    /* Math elements */
+    .math-fallback {
+        color: #f3f4f6; /* DARK MODE: Math fallback - Light gray */
+    }
+    
+    .word-count-info {
+        color: #ffffff;
+        border-top-color: rgba(255, 255, 255, 0.3);
+        font-weight: 400;
+    }
+    
+    /* Small text elements in dark mode - MAXIMUM CONTRAST */
+    .explanation-content small,
+    .explanation-content .small-text,
+    .explanation-content .description {
+        color: #f9fafb !important; /* CRITICAL FIX: Near-white for maximum contrast */
+        font-weight: 600 !important; /* CRITICAL FIX: Much bolder for visibility */
+    }
+    
+    .explanation-content .secondary-text {
+        color: #f3f4f6 !important; /* CRITICAL FIX: Very light gray for maximum contrast */
+        font-weight: 600 !important; /* CRITICAL FIX: Much bolder for visibility */
+    }
+    
+    /* CRITICAL FIX: Override any low-opacity or dim text */
+    .explanation-content [style*="opacity"],
+    .explanation-content .dim,
+    .explanation-content .muted,
+    .explanation-content .subtle {
+        color: #f9fafb !important; /* Force bright text */
+        opacity: 1 !important; /* Remove any opacity reduction */
+        font-weight: 600 !important;
+    }
+    
+    /* CRITICAL FIX: Ensure backtick code spans are visible */
+    .explanation-content span[style*="color"],
+    .explanation-content .highlight,
+    .explanation-content .term {
+        color: #60d9fa !important; /* Bright cyan for highlighted terms */
+        font-weight: 600 !important;
+        background: rgba(0, 0, 0, 0.2) !important;
+        padding: 1px 3px !important;
+        border-radius: 2px !important;
+    }
+    
+    /* CRITICAL FIX: Math content must be highly visible */
+    .explanation-content .math,
+    .explanation-content .MathJax,
+    .explanation-content .MathJax_Display,
+    .explanation-content .MathJax_Preview,
+    .explanation-content mjx-container,
+    .explanation-content mjx-math,
+    .explanation-content mjx-mrow,
+    .explanation-content mjx-mi,
+    .explanation-content mjx-mo,
+    .explanation-content mjx-mn {
+        color: #ffffff !important; /* CRITICAL FIX: Pure white for math */
+        background: transparent !important;
+        font-weight: 600 !important;
+    }
+    
+    /* CRITICAL FIX: Math expressions and formulas */
+    .explanation-content .math-expression,
+    .explanation-content .formula,
+    .explanation-content .equation {
+        color: #ffffff !important; /* CRITICAL FIX: Pure white for math expressions */
+        background: rgba(0, 0, 0, 0.2) !important; /* Subtle dark background */
+        padding: 8px 12px !important;
+        border-radius: 6px !important;
+        font-weight: 600 !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    /* CRITICAL FIX: Math variables and symbols */
+    .explanation-content .math-var,
+    .explanation-content .math-symbol,
+    .explanation-content .variable {
+        color: #60d9fa !important; /* CRITICAL FIX: Bright cyan for math variables */
+        font-weight: 700 !important;
+        font-style: italic !important;
+    }
+    
+    /* CRITICAL FIX: MathJax containers in dark mode */
+    mjx-container[display="true"] {
+        background: rgba(0, 0, 0, 0.4) !important; /* Dark background for math blocks */
+        border-left: 4px solid #60d9fa !important; /* Bright cyan border */
+        color: #ffffff !important; /* Pure white text */
+    }
+    
+    mjx-container[display="false"] {
+        background: transparent !important;
+        color: #ffffff !important; /* Pure white for inline math */
+    }
+    
+    /* CRITICAL FIX: All MathJax elements */
+    mjx-container *,
+    .MathJax *,
+    .MathJax_Display * {
+        color: #ffffff !important; /* Force white for all math elements */
+        background: transparent !important;
+    }
+}
+
+/* Manual dark mode support (for testing and user preference) */
+.dark-mode {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    color: #ffffff;
+}
+
+.dark-mode .explanation-header {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .explanation-title {
+    color: #ffffff; /* DARK MODE: Explanation title - Pure white */
+}
+
+/* Status and UI text in manual dark mode */
+.dark-mode .status-text {
+    color: #f3f4f6; /* DARK MODE: Status text - Light gray */
+}
+
+/* Selected text section in manual dark mode */
+.dark-mode .selected-text-title {
+    color: #93c5fd; /* DARK MODE: Selected text title - Light blue */
+}
+
+.dark-mode .selected-text-content {
+    color: #f9fafb; /* DARK MODE: Selected text content - Very light gray */
+}
+
+.dark-mode .explanation-content {
+    color: #ffffff;
+}
+
+.dark-mode .explanation-content p {
+    color: #f9fafb !important; /* CRITICAL FIX: Near-white for maximum contrast */
+    font-weight: 500 !important; /* CRITICAL FIX: Slightly bolder for visibility */
+}
+
+.dark-mode .explanation-content strong {
+    color: #ffffff;
+}
+
+.dark-mode .explanation-content em {
+    color: #fbbf24 !important; /* CRITICAL FIX: Bright yellow for italic text */
+    font-weight: 600 !important; /* CRITICAL FIX: Bold italic for maximum visibility */
+    font-style: italic !important;
+}
+
+.dark-mode .explanation-content i {
+    color: #fbbf24 !important; /* CRITICAL FIX: Bright yellow for italic text */
+    font-weight: 600 !important; /* CRITICAL FIX: Bold italic for maximum visibility */
+    font-style: italic !important;
+}
+
+.dark-mode .explanation-content h1,
+.dark-mode .explanation-content h2,
+.dark-mode .explanation-content h3,
+.dark-mode .explanation-content h4,
+.dark-mode .explanation-content h5,
+.dark-mode .explanation-content h6 {
+    color: #ffffff;
+}
+
+/* CRITICAL FIX: Manual dark mode - ensure ALL explanatory text is highly visible */
+.dark-mode .explanation-content p,
+.dark-mode .explanation-content li,
+.dark-mode .explanation-content span,
+.dark-mode .explanation-content div {
+    color: #f9fafb !important; /* Force near-white for maximum readability */
+    font-weight: 500 !important; /* Slightly bolder for better visibility */
+}
+
+/* CRITICAL FIX: Manual dark mode - bullet point text must be highly visible */
+.dark-mode .explanation-content ul li,
+.dark-mode .explanation-content ol li {
+    color: #f9fafb !important; /* Force near-white for bullet points */
+    font-weight: 500 !important;
+}
+
+.dark-mode .word-count-info {
+    color: #ffffff;
+    border-top-color: rgba(255, 255, 255, 0.3);
+    font-weight: 400;
+}
+
+/* Loading states in manual dark mode */
+.dark-mode .loading-placeholder {
+    color: #ffffff; /* DARK MODE: Loading text - Pure white */
+}
+
+.dark-mode .loading-text-large {
+    color: #60a5fa; /* DARK MODE: Loading title - Bright blue */
+}
+
+.dark-mode .loading-subtext {
+    color: #f9fafb !important; /* CRITICAL FIX: Near-white for maximum contrast */
+    font-weight: 600 !important; /* CRITICAL FIX: Much bolder for visibility */
+}
+
+/* Code blocks in manual dark mode */
+.dark-mode .code-block {
+    background: #0f172a;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .code-block code {
+    color: #f1f5f9;
+}
+
+/* CRITICAL FIX: Manual dark mode - italic text must be highly visible */
+.dark-mode .explanation-content em,
+.dark-mode .explanation-content i,
+.dark-mode .explanation-content .italic,
+.dark-mode .explanation-content code em,
+.dark-mode .explanation-content code i {
+    color: #fbbf24 !important; /* CRITICAL FIX: Bright yellow for italic text */
+    font-weight: 600 !important; /* CRITICAL FIX: Bold italic for maximum visibility */
+    font-style: italic !important;
+}
+
+/* CRITICAL FIX: Manual dark mode - code snippets and inline code must be visible */
+.dark-mode .explanation-content code,
+.dark-mode .explanation-content .code,
+.dark-mode .explanation-content pre {
+    color: #fde047 !important; /* CRITICAL FIX: Bright yellow for code */
+    background: rgba(0, 0, 0, 0.3) !important; /* Dark background for code */
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+    font-weight: 600 !important;
+}
+
+/* CRITICAL FIX: Manual dark mode - math content must be highly visible */
+.dark-mode .explanation-content .math,
+.dark-mode .explanation-content .MathJax,
+.dark-mode .explanation-content .MathJax_Display,
+.dark-mode .explanation-content .MathJax_Preview,
+.dark-mode .explanation-content mjx-container,
+.dark-mode .explanation-content mjx-math,
+.dark-mode .explanation-content mjx-mrow,
+.dark-mode .explanation-content mjx-mi,
+.dark-mode .explanation-content mjx-mo,
+.dark-mode .explanation-content mjx-mn {
+    color: #ffffff !important; /* CRITICAL FIX: Pure white for math */
+    background: transparent !important;
+    font-weight: 600 !important;
+}
+
+/* CRITICAL FIX: Manual dark mode - math expressions and formulas */
+.dark-mode .explanation-content .math-expression,
+.dark-mode .explanation-content .formula,
+.dark-mode .explanation-content .equation {
+    color: #ffffff !important; /* CRITICAL FIX: Pure white for math expressions */
+    background: rgba(0, 0, 0, 0.2) !important; /* Subtle dark background */
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* CRITICAL FIX: Manual dark mode - math variables and symbols */
+.dark-mode .explanation-content .math-var,
+.dark-mode .explanation-content .math-symbol,
+.dark-mode .explanation-content .variable {
+    color: #60d9fa !important; /* CRITICAL FIX: Bright cyan for math variables */
+    font-weight: 700 !important;
+    font-style: italic !important;
+}
+
+/* CRITICAL FIX: Manual dark mode - MathJax containers */
+.dark-mode mjx-container[display="true"] {
+    background: rgba(0, 0, 0, 0.4) !important; /* Dark background for math blocks */
+    border-left: 4px solid #60d9fa !important; /* Bright cyan border */
+    color: #ffffff !important; /* Pure white text */
+}
+
+.dark-mode mjx-container[display="false"] {
+    background: transparent !important;
+    color: #ffffff !important; /* Pure white for inline math */
+}
+
+/* CRITICAL FIX: Manual dark mode - all MathJax elements */
+.dark-mode mjx-container *,
+.dark-mode .MathJax *,
+.dark-mode .MathJax_Display * {
+    color: #ffffff !important; /* Force white for all math elements */
+    background: transparent !important;
+}
+
+/* Manual dark mode - Math window matching CODE EXAMPLES style (H3) */
+.dark-mode .math-window,
+.dark-mode mjx-container[display="true"] {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(20, 184, 166, 0.15) 100%) !important;
+    border: 1px solid rgba(16, 185, 129, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin: 20px 0 !important;
+    position: relative !important;
+    overflow: hidden !important;
+    color: #ffffff !important; /* White text for dark mode */
+}
+
+/* Manual dark mode - Math window accent bar */
+.dark-mode .math-window::before,
+.dark-mode mjx-container[display="true"]::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 3px !important;
+    background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%) !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+/* LIGHT MODE STYLES - Professional Light Theme */
+.light-mode {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+    color: #1f2937 !important;
+}
+
+.light-mode .explanation-header {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #1f2937 !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.light-mode .explanation-title {
+    color: #111827 !important;
+}
+
+.light-mode .status-text {
+    color: #374151 !important;
+}
+
+.light-mode .selected-text-title {
+    color: #1d4ed8 !important;
+}
+
+.light-mode .selected-text-content {
+    color: #1f2937 !important;
+}
+
+.light-mode .explanation-content {
+    background: rgba(255, 255, 255, 0.8) !important;
+    color: #1f2937 !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode .explanation-content p,
+.light-mode .explanation-content li,
+.light-mode .explanation-content span,
+.light-mode .explanation-content div {
+    color: #1f2937 !important;
+    font-weight: 400 !important;
+}
+
+.light-mode .explanation-content h1,
+.light-mode .explanation-content h2,
+.light-mode .explanation-content h3,
+.light-mode .explanation-content h4,
+.light-mode .explanation-content h5,
+.light-mode .explanation-content h6 {
+    color: #111827 !important;
+}
+
+/* Light mode small text */
+.light-mode .explanation-content small,
+.light-mode .explanation-content .small-text,
+.light-mode .explanation-content .description {
+    color: #374151 !important;
+    font-weight: 500 !important;
+}
+
+.light-mode .explanation-content .secondary-text {
+    color: #4b5563 !important;
+    font-weight: 500 !important;
+}
+
+/* Light mode italic and code */
+.light-mode .explanation-content em,
+.light-mode .explanation-content i,
+.light-mode .explanation-content .italic {
+    color: #d97706 !important; /* Orange for italic text */
+    font-weight: 600 !important;
+}
+
+.light-mode .explanation-content code,
+.light-mode .explanation-content .code,
+.light-mode .explanation-content pre {
+    color: #dc2626 !important; /* Red for code */
+    background: rgba(254, 242, 242, 0.8) !important;
+    border: 1px solid rgba(220, 38, 38, 0.2) !important;
+}
+
+/* Light mode loading states */
+.light-mode .loading-placeholder {
+    color: #1f2937 !important;
+}
+
+.light-mode .loading-text-large {
+    color: #1d4ed8 !important;
+}
+
+.light-mode .loading-subtext {
+    color: #374151 !important;
+    font-weight: 500 !important;
+}
+
+.light-mode .word-count-info {
+    color: #374151 !important;
+    border-top-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* THEME TOGGLE BUTTON - Professional Design */
+.theme-toggle {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 99999 !important; /* Increased z-index to ensure visibility */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 12px 20px !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-width: 120px !important; /* Ensure minimum width */
+    justify-content: center !important;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%) !important;
+}
+
+.theme-toggle:active {
+    transform: translateY(0) !important;
+}
+
+/* Theme toggle icons */
+.theme-toggle .icon {
+    font-size: 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.theme-toggle.dark-mode .light-icon {
+    display: none !important;
+}
+
+.theme-toggle:not(.dark-mode) .dark-icon {
+    display: none !important;
+}
