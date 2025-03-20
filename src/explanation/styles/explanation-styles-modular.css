@@ -1,0 +1,17 @@
+/* ===========================================================================
+   EXPLANATION WINDOW STYLES - MAIN ENTRY POINT
+   Modern, responsive styling for the explanation window
+   
+   This file imports all component stylesheets in the correct order.
+   Each component is under 500 lines and focused on a single responsibility.
+   =========================================================================== */
+
+/* Import all component stylesheets */
+@import url('./components/base.css');           /* Reset, base styles, animations */
+@import url('./components/header.css');         /* Header, status bar, navigation */
+@import url('./components/typography.css');     /* Headings H1-H6 */
+@import url('./components/content.css');        /* Content sections and text */
+@import url('./components/code.css');           /* Code blocks */
+@import url('./components/math.css');           /* Math elements and equations */
+@import url('./components/states.css');         /* Loading and error states */
+@import url('./components/responsive.css');     /* Dark mode and responsive design */
