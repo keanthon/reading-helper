@@ -35,8 +35,8 @@ An Electron desktop app that explains highlighted text using Google Gemini AI. S
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/keanthon/reading_helper_production.git
-   cd reading_helper_production
+   git clone https://github.com/keanthon/reading-helper.git
+   cd reading-helper
    ```
 
 2. **Install dependencies**
@@ -119,7 +119,6 @@ npm run test:integration
 - **[Electron](https://www.electronjs.org/)** v28 — Cross-platform desktop framework
 - **[@google/genai](https://www.npmjs.com/package/@google/genai)** — Google Gemini AI SDK
 - **[Tesseract.js](https://tesseract.projectnaptha.com/)** — OCR text recognition
-- **[robotjs](https://robotjs.io/)** — Native OS automation (keyboard simulation)
 - **[MathJax](https://www.mathjax.org/)** — LaTeX math rendering in explanations
 
 ## License
